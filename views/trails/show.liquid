@@ -1,0 +1,26 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div class="container-md">
+    <article>
+        <h2>
+            {{ trail.title }} -
+            {% if trail.ready %}
+            Ready
+            {% else %}
+            Not Ready
+            {%endif%}
+        </h2>
+        <h3>Amount: {{ trail.amount }}</h3>
+        <h6>Body: {{ trail.body }}</h6>
+        {% if trail.owner == userId %}
+        <div class="btn-group">
+
+            <a href="/trails/{{ trail.id }}/edit" class="btn btn-primary">Edit</a>
+            <form action="/trails/{{ trail.id }}?_method=DELETE" method="POST">
+                <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+        </div>
+        {% endif %}
+    </article>
+</div>
+{% endblock %}

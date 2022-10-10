@@ -1,5 +1,7 @@
+const mongoose = require('./connection')
+
 // import what I need
-const { Schema, model } = require('./connection.js')
+const { Schema, model } = mongoose
 
 // create the schema
 const UserSchema = new Schema(

@@ -1,0 +1,31 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+    {% if trails.length > 0%}
+        <div>
+            <h2 class="display-6">All Trails</h2>
+            <div class="row">
+                {% for trail in trails %}
+                    <div class="card" style="width: 18rem;">
+                        <h5 class="card-header">{{trail.name}}</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                               
+                            </h5>
+                            <p class="card-text"> {{trail.name}}  {{trail.type}}</p>
+                            <div class="colorBox" style="background-color: {{trail.type}}">
+
+                            </div>
+                            <a class="btn btn-info" href="/trails/{{trail.id}}">
+                                View {{trail.name}}
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <div>
+            <h2 class="display-6">No trails yet... Go Ride!</h2>
+        </div>
+    {% endif %}
+{% endblock %}

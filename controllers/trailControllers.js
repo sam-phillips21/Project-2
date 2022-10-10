@@ -1,6 +1,6 @@
 // Import Dependencies
 const express = require('express')
-const Example = require('../models/example')
+const Trail = require('../models/trail')
 
 // Create router
 const router = express.Router()
@@ -8,27 +8,31 @@ const router = express.Router()
 // Router Middleware
 // Authorization middleware
 // If you have some resources that should be accessible to everyone regardless of loggedIn status, this middleware can be moved, commented out, or deleted. 
-router.use((req, res, next) => {
-	// checking the loggedIn boolean of our session
-	if (req.session.loggedIn) {
-		// if they're logged in, go to the next thing(thats the controller)
-		next()
-	} else {
-		// if they're not logged in, send them to the login page
-		res.redirect('/auth/login')
-	}
-})
+
+
+// router.use((req, res, next) => {
+// 	// checking the loggedIn boolean of our session
+// 	if (req.session.loggedIn) {
+// 		// if they're logged in, go to the next thing(thats the controller)
+// 		next()
+// 	} else {
+// 		// if they're not logged in, send them to the login page
+// 		res.redirect('/auth/login')
+// 	}
+// })
 
 // Routes
 
 // index ALL
 router.get('/', (req, res) => {
-	Example.find({})
-		.then(examples => {
+	Trail.find({})
+		.populate("comments.author", "username")
+		.then(trails => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
-			
-			res.render('examples/index', { examples, username, loggedIn })
+			const userId = req.session.userId
+
+			res.render('trails/index', { trails, username, loggedIn })
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
@@ -39,9 +43,9 @@ router.get('/', (req, res) => {
 router.get('/mine', (req, res) => {
     // destructure user info from req.session
     const { username, userId, loggedIn } = req.session
-	Example.find({ owner: userId })
-		.then(examples => {
-			res.render('examples/index', { examples, username, loggedIn })
+	Trail.find({ owner: userId })
+		.then(trails => {
+			res.render('trails/index', { trails, username, loggedIn })
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
@@ -51,7 +55,7 @@ router.get('/mine', (req, res) => {
 // new route -> GET route that renders our page with the form
 router.get('/new', (req, res) => {
 	const { username, userId, loggedIn } = req.session
-	res.render('examples/new', { username, loggedIn })
+	res.render('trails/new', { username, loggedIn })
 })
 
 // create -> POST route that actually calls the db and makes a new document
@@ -59,10 +63,10 @@ router.post('/', (req, res) => {
 	req.body.ready = req.body.ready === 'on' ? true : false
 
 	req.body.owner = req.session.userId
-	Example.create(req.body)
-		.then(example => {
-			console.log('this was returned from create', example)
-			res.redirect('/examples')
+	Trail.create(req.body)
+		.then(trail => {
+			console.log('this was returned from create', trail)
+			res.redirect('/trails')
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
@@ -72,10 +76,10 @@ router.post('/', (req, res) => {
 // edit route -> GET that takes us to the edit form view
 router.get('/:id/edit', (req, res) => {
 	// we need to get the id
-	const exampleId = req.params.id
-	Example.findById(exampleId)
-		.then(example => {
-			res.render('examples/edit', { example })
+	const trailId = req.params.id
+	Trail.findById(trailId)
+		.then(trail => {
+			res.render('trails/edit', { trail })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -84,12 +88,12 @@ router.get('/:id/edit', (req, res) => {
 
 // update route
 router.put('/:id', (req, res) => {
-	const exampleId = req.params.id
+	const trailId = req.params.id
 	req.body.ready = req.body.ready === 'on' ? true : false
 
-	Example.findByIdAndUpdate(exampleId, req.body, { new: true })
-		.then(example => {
-			res.redirect(`/examples/${example.id}`)
+	Trail.findByIdAndUpdate(trailId, req.body, { new: true })
+		.then(trail => {
+			res.redirect(`/trails/${trail.id}`)
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -98,11 +102,11 @@ router.put('/:id', (req, res) => {
 
 // show route
 router.get('/:id', (req, res) => {
-	const exampleId = req.params.id
-	Example.findById(exampleId)
-		.then(example => {
+	const trailId = req.params.id
+	Trail.findById(trailId)
+		.then(trails => {
             const {username, loggedIn, userId} = req.session
-			res.render('examples/show', { example, username, loggedIn, userId })
+			res.render('trails/show', { trail, username, loggedIn, userId })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -111,14 +115,30 @@ router.get('/:id', (req, res) => {
 
 // delete route
 router.delete('/:id', (req, res) => {
-	const exampleId = req.params.id
-	Example.findByIdAndRemove(exampleId)
-		.then(example => {
-			res.redirect('/examples')
+	const trailId = req.params.id
+	Trail.findByIdAndRemove(trailId)
+		.then(trail => {
+			res.redirect('/trails')
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
 		})
+})
+
+router.get("/:id", (req, res) => {
+    const id = req.params.id
+
+    Fruit.findById(id)
+
+	.populate("comments.author", "username")
+	.then(trail => {
+		const username = req.session.username
+		const loggedIn = req.session.loggedIn
+		const userId = req.session.userId
+		
+		res.render('trails/show', { trail, username, loggedIn, userId })
+	})
+	.catch(err => res.redirect(`/error?error=${err}`))
 })
 
 // Export the Router

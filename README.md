@@ -53,10 +53,16 @@ Postman
 
 
 
+![wb ERD v1](https://user-images.githubusercontent.com/112962554/194882192-62ec2024-1cc6-412f-8429-5272962d2545.jpg)
+
+![tp-whiteboard-4](https://user-images.githubusercontent.com/112962554/194882232-e3d68022-0a5e-4615-b417-bddc4ce48148.jpg)
+
+![tp-whiteboard-2](https://user-images.githubusercontent.com/112962554/194881997-f69bf87c-4a19-435c-bc53-11c4eac3813b.jpg)
+
+![wyotrails-whiteboard-1](https://user-images.githubusercontent.com/112962554/194882605-ad8f1c25-8155-46ba-b87b-1d0705859eab.jpg)
 
 schedule:
-
-monday: finalize plan. work on server.js
+monday: finalize plan. work on server.js!
 Tuesday: work on middleware
 Wednesday: seed data
 Get app functional
@@ -64,4 +70,3 @@ Thursday: work on users
 Friday: style/liquid application
 Saturday: Degbug
 Sunday:Debug
-

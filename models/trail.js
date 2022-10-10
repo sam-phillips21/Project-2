@@ -7,12 +7,12 @@ const User = require('./user')
 // destructure the schema and model constructors from mongoose
 const { Schema, model } = mongoose
 
-const exampleSchema = new Schema(
+const trailSchema = new Schema(
 	{
-		title: { type: String, required: true },
-		body: { type: String, required: true },
-        amount: { type: Number, required: true },
-		ready: { type: Boolean, required: true },
+		state: { type: String, required: true },
+		location: { type: String, required: true },
+        trail: { type: String, required: true },
+		type: { type: String, required: true },
 		owner: {
 			type: Schema.Types.ObjectID,
 			ref: 'User',
@@ -21,9 +21,9 @@ const exampleSchema = new Schema(
 	{ timestamps: true }
 )
 
-const Example = model('Example', exampleSchema)
+const Trail = model('Trail', trailSchema)
 
 /////////////////////////////////
 // Export our Model
 /////////////////////////////////
-module.exports = Example
+module.exports = Trail
