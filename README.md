@@ -31,15 +31,6 @@ session
 Mongo Store
 Postman 
 
-
-
-
-
-
-
-
-
-
 // SAMPLE:
 
 // Trail Report
@@ -63,4 +54,13 @@ Postman
 
 
 
-wyotrails-whiteboard-1.jpg
+schedule:
+
+monday: finalize plan. work on server.js
+Tuesday: work on middleware
+Wednesday: seed data
+Get app functional
+Thursday: work on users
+Friday: style/liquid application
+Saturday: Degbug
+Sunday:Debug
