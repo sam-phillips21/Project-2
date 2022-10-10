@@ -64,3 +64,4 @@ Thursday: work on users
 Friday: style/liquid application
 Saturday: Degbug
 Sunday:Debug
+
