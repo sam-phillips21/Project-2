@@ -6,17 +6,17 @@
             <div class="row">
                 {% for trail in trails %}
                     <div class="card" style="width: 18rem;">
-                        <h5 class="card-header">{{trail.name}}</h5>
+                        <h5 class="card-header">{{trail.state}}</h5>
                         <div class="card-body">
                             <h5 class="card-title">
                                
                             </h5>
-                            <p class="card-text"> {{trail.name}}  {{trail.type}}</p>
+                            <p class="card-text">  {{trail.trail}} trail is {{trail.type}}</p>
                             <div class="colorBox" style="background-color: {{trail.type}}">
 
                             </div>
                             <a class="btn btn-info" href="/trails/{{trail.id}}">
-                                View {{trail.name}}
+                                View {{trail.trail}}
                             </a>
                         </div>
                     </div>

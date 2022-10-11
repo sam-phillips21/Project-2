@@ -1,7 +1,7 @@
 {% layout 'layout.liquid' %}
 {% block content %}
 <div class="container-sm">
-    <form action="/trails" method="POST">
+    <form action="/trails/{{trail.id}}?_method=PUT" method="POST">
         <fieldset>
             <legend>Create New Trail</legend>
             <label class="form-label">Title: </label>
@@ -22,8 +22,8 @@
             >
             <label class="form-label">Amount:</label>
             <input 
-                type="number" 
-                name="amount"
+                type="text" 
+                name="aaaa"
                 value="{{ trail.amount }}"
                 class="form-control"
             >

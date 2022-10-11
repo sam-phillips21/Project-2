@@ -4,21 +4,21 @@ const Trail = require('./trail')
 const db = mongoose.connection
 
 db.on('open', () => {
-    //bring in array of starter fruits
+    
     const startTrails = [
-        { state: "Wyoming", location: " Curt Gowdy State Park", trail: "Gold Rush", type:"singletrack" },
+        { state: "Wyoming", location: "Curt Gowdy State Park", trail: "Gold Rush", type:"singletrack" },
 
-        { state: "Wyoming", location: " Curt Gowdy State Park", trail: "Gold Standard", type:"singletrack" },
+        { state: "Wyoming", location: "Curt Gowdy State Park", trail: "Gold Standard", type:"singletrack" },
 
-        { state: "Wyoming", location: " Curt Gowdy State Par", trail: "Mo Rocka", type:"singletrack" },
+        { state: "Wyoming", location: "Curt Gowdy State Par", trail: "Mo Rocka", type:"singletrack" },
 
         { state: "Wyomimg", location: "Curt Gowdy State Park", trail: "Stone Temple", type:"singletrack" },
 
         { state: "Wyoming", location:  "Curt Gowdy State Park", trail: "Crow Creek", type:"singletrack" },
 
-        { state: "Wyoming", location: " Curt Gowdy State Park", trail: "Ignoramus", type:"singletrack" },
+        { state: "Wyoming", location: "Curt Gowdy State Park", trail: "Ignoramus", type:"singletrack" },
 
-        { state: "Wyoming", location: " Curt Gowdy State Par", trail: "Gold Watch", type:"singletrack" },
+        { state: "Wyoming", location: "Curt Gowdy State Park", trail: "Gold Watch", type:"singletrack" },
 
         { state: "Wyomimg", location: "Curt Gowdy State Park", trail: "El Alto", type:"singletrack" },
 
@@ -30,7 +30,7 @@ db.on('open', () => {
 
 
     Trail.deleteMany({})
-        .then(deletedFruits => {
+        .then(deletedTrails => {
             console.log("this is what .remove returns", deletedTrails)
 
     Trail.create(startTrails)

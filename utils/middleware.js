@@ -28,6 +28,7 @@ const middleware = (app) => {
             store: MongoStore.create({
                 mongoUrl: process.env.DATABASE_URL
             }),
+			
             saveUninitialized: true,
             resave: false
         })

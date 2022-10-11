@@ -26,7 +26,7 @@ const router = express.Router()
 // index ALL
 router.get('/', (req, res) => {
 	Trail.find({})
-		.populate("comments.author", "username")
+		// .populate("comments.author", "username")
 		.then(trails => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn

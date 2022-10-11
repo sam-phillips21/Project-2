@@ -15,7 +15,7 @@ const router = express.Router()
 
 // GET to render the signup form
 router.get('/signup', (req, res) => {
-	res.render('auth/signup')
+	res.render('users/signup')
 })
 
 // POST to send the signup info
@@ -29,7 +29,7 @@ router.post('/signup', async (req, res) => {
 	User.create(req.body)
 		// if created successfully redirect to login
 		.then((user) => {
-			res.redirect('/auth/login')
+			res.redirect('/users/login')
 		})
 		// if an error occurs, send err
 		.catch((error) => {
@@ -40,7 +40,7 @@ router.post('/signup', async (req, res) => {
 // two login routes
 // get to render the login form
 router.get('/login', (req, res) => {
-	res.render('auth/login')
+	res.render('users/login')
 })
 // post to send the login info(and create a session)
 router.post('/login', async (req, res) => {
@@ -66,7 +66,7 @@ router.post('/login', async (req, res) => {
 					req.session.loggedIn = true
 					req.session.userId = user.id
 
-          			const { username, loggedIn, userId } = req.session
+          			// const { username, loggedIn, userId } = req.session
 
 					console.log('session user id', req.session.userId)
 					// redirect to /examples if login is successful
@@ -90,9 +90,25 @@ router.post('/login', async (req, res) => {
 
 // logout route -> destroy the session
 router.get('/logout', (req, res) => {
-	req.session.destroy(() => {
-		res.redirect('/')
-	})
+	// req.session.destroy(() => {
+	// 	res.redirect('/')
+	// })
+	const username = req.session.username
+    const loggedIn = req.session.loggedIn
+    const userId = req.session.userId
+
+    res.render('users/logout', { username, loggedIn, userId})
+ 
+})
+router.delete('/logout', (req, res) => {
+    
+    req.session.destroy(err => {
+        console.log('req.session after logout', req.session)
+        console.log('err on logout?', err)
+
+        // res.sendStatus(204)
+        res.redirect('/')
+    })
 })
 
 // Export the Router
