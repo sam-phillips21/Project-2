@@ -28,11 +28,11 @@ router.post('/signup', async (req, res) => {
 	// create a new user
 	User.create(req.body)
 		// if created successfully redirect to login
-		.then((user) => {
+		.then(user => {
 			res.redirect('/users/login')
 		})
 		// if an error occurs, send err
-		.catch((error) => {
+		.catch(error => {
 			res.redirect(`/error?error=${error}`)
 		})
 })
@@ -46,11 +46,11 @@ router.get('/login', (req, res) => {
 router.post('/login', async (req, res) => {
 	// console.log('request object', req)
 	// get the data from the request body
-	console.log('req.body', req.body);
+	// console.log('req.body', req.body);
 	
 	const { username, password } = req.body
 	// then we search for the user
-	User.findOne({ username: username })
+	User.findOne({ username })
 		.then(async (user) => {
 			// check if the user exists
 			if (user) {
@@ -59,10 +59,10 @@ router.post('/login', async (req, res) => {
 				const result = await bcrypt.compare(password, user.password)
 
 				if (result) {
-					console.log('the user', user);
+					// console.log('the user', user);
 					
 					// store some properties in the session
-					req.session.username = user.username
+					req.session.username = username
 					req.session.loggedIn = true
 					req.session.userId = user.id
 
@@ -81,7 +81,7 @@ router.post('/login', async (req, res) => {
 			}
 		})
 		// catch any other errors that occur
-		.catch((error) => {
+		.catch(error => {
 			console.log('the error', error);
 			
 			res.redirect(`/error?error=${error}`)
@@ -90,26 +90,12 @@ router.post('/login', async (req, res) => {
 
 // logout route -> destroy the session
 router.get('/logout', (req, res) => {
-	// req.session.destroy(() => {
-	// 	res.redirect('/')
-	// })
-	const username = req.session.username
-    const loggedIn = req.session.loggedIn
-    const userId = req.session.userId
+	req.session.destroy(() => {
+		res.redirect('/')
+	
 
-    res.render('users/logout', { username, loggedIn, userId})
  
 })
-router.delete('/logout', (req, res) => {
-    
-    req.session.destroy(err => {
-        console.log('req.session after logout', req.session)
-        console.log('err on logout?', err)
+	})
 
-        // res.sendStatus(204)
-        res.redirect('/')
-    })
-})
-
-// Export the Router
 module.exports = router

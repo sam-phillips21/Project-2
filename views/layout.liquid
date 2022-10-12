@@ -14,18 +14,18 @@
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/trails">WyoTrails</a>
+                <a class="navbar-brand" href="/">WyoTrails</a>
                 {% if loggedIn %}
-                    <a class="nav-link text-light" href="/trails/mine">Hello {{username}}</a>
+                    <a class="nav-link text-light" href="/trails/mine"> My Trails </a>
                 {% endif %}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <a class="nav-link text-light" href="/trails">Trails</a>
-                     <a class="nav-link text-light" href="/Conditions">Conditions</a>
+                   
                     {% if loggedIn %}
-                        <a class="nav-link text-light" href="/trails/new">New Trails</a>
+                        <a class="nav-link text-light" href="/trails/new">New Trail</a>
                         <a class="nav-link text-light" href="/users/logout">Log Out</a>
 
                     {% else %}

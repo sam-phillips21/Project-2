@@ -4,7 +4,7 @@ const express = require("express")
 const path = require("path") // import path module
 const TrailRouter = require('./controllers/trailControllers')
 const UserRouter = require('./controllers/userControllers')
-const CommentRouter = require('./controllers/commentControllers')
+const ConditionRouter = require('./controllers/conditionControllers')
 const middleware = require('./utils/middleware')
 
 const app = require("liquid-express-views")(express())
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 })
 
 app.use('/trails', TrailRouter)
-app.use('/comments', CommentRouter)
+app.use('/condtions', ConditionRouter)
 app.use('/users', UserRouter)
 
 app.get('/error', (req, res) => {

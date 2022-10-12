@@ -10,7 +10,7 @@ db.on('open', () => {
 
         { state: "Wyoming", location: "Curt Gowdy State Park", trail: "Gold Standard", type:"singletrack" },
 
-        { state: "Wyoming", location: "Curt Gowdy State Par", trail: "Mo Rocka", type:"singletrack" },
+        { state: "Wyoming", location: "Curt Gowdy State Park", trail: "Mo Rocka", type:"singletrack" },
 
         { state: "Wyomimg", location: "Curt Gowdy State Park", trail: "Stone Temple", type:"singletrack" },
 

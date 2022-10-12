@@ -3,24 +3,33 @@
 <div class="container-md">
     <article>
         <h2>
-            {{ trail.title }} -
-            {% if trail.ready %}
-            Ready
+            {{ trail.title }} 
+            {% if loggedIn %}
+            
             {% else %}
-            Not Ready
+            
             {%endif%}
         </h2>
-        <h3>Amount: {{ trail.amount }}</h3>
-        <h6>Body: {{ trail.body }}</h6>
-        {% if trail.owner == userId %}
+        <h4> {{trail.trail}} </h4>
+        <h3>Location: {{ trail.location }}</h3>
+        <h6>type: {{ trail.type }}</h6>
+        
+        {% if trail.owner == userId and loggedIn %}
+        
         <div class="btn-group">
 
-            <a href="/trails/{{ trail.id }}/edit" class="btn btn-primary">Edit</a>
+            <a class="btn btn-primary" href="/trails/edit/{{ trail.id }}">Edit</a>
+
             <form action="/trails/{{ trail.id }}?_method=DELETE" method="POST">
-                <input type="submit" value="Delete" class="btn btn-danger">
+                <input class="btn btn-danger" type="submit" value="Delete" >
             </form>
         </div>
         {% endif %}
     </article>
+
+    <hr>
+    <H3>Trail Condition Reports</H3>
+    <hr>
+    
 </div>
 {% endblock %}

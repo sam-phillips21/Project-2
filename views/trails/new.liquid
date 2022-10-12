@@ -3,35 +3,45 @@
 <div class="container-sm">
     <form action="/trails" method="POST">
         <fieldset>
-            <legend>Create New Trail</legend>
-            <label class="form-label">Title: </label>
+            <legend>Add New Trail</legend>
+                <label class="form-label">State: </label>
             <input 
                 type="text" 
-                name="title" 
-                placeholder="enter trails title"
+                name="state" 
+                placeholder="Enter State (location)"
                 class="form-control"
+                value="{{trail.state}}"
             >
-            <label class="form-label">Body:</label>
+                 <label class="form-label">Location:</label>
             <input 
                 type="text" 
-                name="body" 
-                placeholder="enter trails body" 
+                name="location"
+                placeholder="ex: Riding area, park, National Forest, Local landmark"
                 class="form-control"
             >
-            <label class="form-label">Amount:</label>
+                <label class="form-label">Trail: </label>
             <input 
-                type="number" 
-                name="amount" 
+                type="text" 
+                name="trail" 
+                placeholder="Trail name"
                 class="form-control"
             >
-            <label class="form-label">Ready:</label>
+                <label class="form-label">Type:</label>
+            <input 
+                type="text" 
+                name="type" 
+                placeholder="ex: cross-country, singletrack, gravity/downhill" 
+                class="form-control"
+            >
+
+                {%- comment -%} <label class="form-label">Ready:</label>
             <input 
                 type="checkbox" 
                 name="ready" 
                 class="form-check-input"
-            >
+            > {%- endcomment -%}
         </fieldset>
-        <input type="submit" value="Create New Trail" class="btn btn-success">
+        <input type="submit" value="Create New Trail" class="btn btn-success" value="create trail">
     </form>
 </div>
 {% endblock %}
