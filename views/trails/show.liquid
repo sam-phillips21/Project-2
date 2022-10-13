@@ -28,8 +28,28 @@
     </article>
 
     <hr>
-    <H3>Trail Condition Reports</H3>
+    <H3>Trail Report</H3>
     <hr>
-    
+        <div class = "col-md-6">
+            <form action="/conditions/{{trail.id}}" method="POST">
+                <fieldset>
+                    <legend>Add Conditions Report:</legend>
+                    <label class="form-label"> Trail Conditions:</label>
+                    <input class="form-control mb-5" type="text"
+                    placeholder="Enter your Conditions:" name="trailUpdate" required>
+                </fieldset>
+                <input class="btn btn-success" type="submit" value="add">
+                </form>
+        </div>
+        <hr>
+        {% if trail.conditions.length > 0 %}
+            <div class="container-md justify-content-left">
+                <div class="col-md-8 col-lq-6">
+                    {% for condition in trail.conditions %}
+                        {% render '../condition.liquid', condition: condition, userId: userId, trail: trail %}
+                        {% endfor %}
+                </div>
+            </div>
+            {% endif %}
 </div>
 {% endblock %}
