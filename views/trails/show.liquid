@@ -12,7 +12,9 @@
         </h2>
         <h4> {{trail.trail}} </h4>
         <h3>Location: {{ trail.location }}</h3>
-        <h6>type: {{ trail.type }}</h6>
+        <h4>type: {{ trail.type }}</h4>
+        <p>Description: {{ trail.Description }}</p>
+        <h4>Difficulty: {{trail.Difficulty }}</h4>
         
         {% if trail.owner == userId and loggedIn %}
         
@@ -31,15 +33,21 @@
     <H3>Trail Report</H3>
     <hr>
         <div class = "col-md-6">
-            <form action="/conditions/{{trail.id}}" method="POST">
+            
+            <form action="/conditionControllers/{{trail.id}}" method="POST">
                 <fieldset>
                     <legend>Add Conditions Report:</legend>
                     <label class="form-label"> Trail Conditions:</label>
                     <input class="form-control mb-5" type="text"
                     placeholder="Enter your Conditions:" name="trailUpdate" required>
+                    
+                    <label class="form-label"> Description:</label>
+                    <input class="form-control mb-5" type="text"
+                    placeholder="Share comments and beta here:" name="description" required>
                 </fieldset>
-                <input class="btn btn-success" type="submit" value="add">
+                <input class="btn btn-success" type="submit" value="add condition">
                 </form>
+                
         </div>
         <hr>
         {% if trail.conditions.length > 0 %}

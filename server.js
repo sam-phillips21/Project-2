@@ -25,7 +25,8 @@ app.get("/", (req, res) => {
 })
 
 app.use('/trails', TrailRouter)
-app.use('/condtions', ConditionRouter)
+app.use('/conditionControllers', ConditionRouter)
+
 app.use('/users', UserRouter)
 
 app.get('/error', (req, res) => {

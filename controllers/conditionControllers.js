@@ -1,18 +1,16 @@
-const { Router } = require("express")
+// const { Router } = require("express")
 const express = require("express")
 const Trail = require("../models/trail")
 
 const router = express.Router()
 
 router.post('/:trailId', (req, res) => {
+    console.log("route hit")
     const trailId = req.params.trailId
 
     if (req.session.loggedIn) {
         req.body.author = req.session.userId
-    } else {
-        res.sendStatus(401)
-    }
-    Trail.findById(trailId)
+        Trail.findById(trailId)
 
         .then(trail => {
             trail.conditions.push(req.body)
@@ -23,15 +21,21 @@ router.post('/:trailId', (req, res) => {
             res.redirect(`/trails/${trail.id}`)
         })
         .catch(error => res.redirect(`/error?error=${error}`))
+    } else {
+        console.log("else hit")
+        res.redirect("/users/signup")
+    }
+
 })
 
 router.delete('/delete/:trailId/:condId', (req, res) => {
+    console.log("hit")
     const trailId = req.params.trailId
     const condId = req.params.condId
     
     Trail.findById(trailId)
         .then(trail => {
-        const theCondition = trail.condtions.id(condId)
+        const theCondition = trail.conditions.id(condId)
         if (req.session.loggedIn) {
    
         if (theCondition.author == req.session.userId) {

@@ -2,10 +2,11 @@
     <div class="card mb-4 shadow">
         <div class="card-body">
             <p>{{ condition.trailUpdate }}</p>
+            <p>{{ condition.description }}</p>
             <div class="d-flex justify-content-between">
                 <small>author: {{ condition.author.username }}</small>
                 {% if condition.author == userId %}
-                    <form action="/conditions/delete/{{trail.id}}/{{condition.id}}?_method=DELETE" method="POST">
+                    <form action="/conditionControllers/delete/{{trail.id}}/{{condition.id}}?_method=DELETE" method="POST">
                         <input class="btn btn-danger" type="submit" value="X">
                     </form>
                 {% endif %}

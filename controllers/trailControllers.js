@@ -182,6 +182,8 @@ router.get("/:id", (req, res) => {
 		const username = req.session.username
 		const loggedIn = req.session.loggedIn
 		const userId = req.session.userId
+		console.log("this is trail auth", trail.conditions)
+		console.log('this is userId', userId )
 		
 		res.render('trails/show', { trail, username, loggedIn, userId })
 	})
