@@ -11,6 +11,7 @@
                 placeholder="{{ trail.state }}"
                 value="{{ trail.state }}"
                 class="form-control"
+                required= true
             >
             <label class="form-label">Location:</label>
             <input 
@@ -19,6 +20,7 @@
                 placeholder="ex: Riding area" 
                 value="{{ trail.location }}" 
                 class="form-control"
+                required= true
             >
             <label class="form-label">Trail:</label>
             <input 
@@ -26,6 +28,7 @@
                 name="Trail"
                 value="{{ trail.trail }}"
                 class="form-control"
+                required= true
             >
             <label class="form-label">Type:</label>
             <input 
@@ -42,7 +45,8 @@
                 name="Description" 
                 placeholder="{{ trail.Description }}"
                 value="{{ trail.Description }}"
-                class="form-control">
+                class="form-control"
+                required= true>
 
              <label class="form-label">Difficulty:</label>
             <input 
@@ -50,7 +54,8 @@
                 name="Difficulty" 
                 placeholder="1-5 Five being most challenging"
                 value="{{ trail.Difficulty }}"
-                class="form-control">
+                class="form-control"
+                required= true>
               
             
         </fieldset>

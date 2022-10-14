@@ -5,6 +5,7 @@
             <p>{{ condition.description }}</p>
             <div class="d-flex justify-content-between">
                 <small>author: {{ condition.author.username }}</small>
+                <small>Date: {{ condition.timestamps }}</small>
                 {% if condition.author == userId %}
                     <form action="/conditionControllers/delete/{{trail.id}}/{{condition.id}}?_method=DELETE" method="POST">
                         <input class="btn btn-danger" type="submit" value="X">
