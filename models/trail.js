@@ -16,6 +16,9 @@ const trailSchema = new Schema(
 		location: { type: String, required: true },
         trail: { type: String, required: true },
 		type: { type: String, required: true},
+		Description: { type: String, required: true},
+		Difficulty: { type: String, required: true},
+		
 		owner: {
 			type: Schema.Types.ObjectID,
 			ref: 'User',

@@ -31,7 +31,25 @@
             <input 
                 type="text" 
                 name="type" 
-                placeholder="{{ trail.type }}"
+                placeholder="ex: singletrack, cross-country, gravity/ downhill"
+                value="{{ trail.type }}"
+                class="form-control"
+                required= true>
+
+             <label class="form-label">Description:</label>
+            <input 
+                type="text" 
+                name="Description" 
+                placeholder="{{ trail.Description }}"
+                value="{{ trail.Description }}"
+                class="form-control">
+
+             <label class="form-label">Difficulty:</label>
+            <input 
+                type="text" 
+                name="Difficulty" 
+                placeholder="1-5 Five being most challenging"
+                value="{{ trail.Difficulty }}"
                 class="form-control">
               
             
