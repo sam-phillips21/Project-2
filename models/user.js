@@ -1,3 +1,4 @@
+//user schema for app
 const mongoose = require('./connection')
 
 // import what I need

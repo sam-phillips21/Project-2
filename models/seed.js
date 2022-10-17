@@ -1,3 +1,5 @@
+//have ten pieces of seeded data
+
 const mongoose = require('./connection')
 const Trail = require('./trail')
 

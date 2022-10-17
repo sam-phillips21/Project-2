@@ -1,4 +1,5 @@
 // Import Dependencies
+//routes to create trails
 const express = require('express')
 const Trail = require('../models/trail')
 

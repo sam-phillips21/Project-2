@@ -1,4 +1,5 @@
 // const { Router } = require("express")
+//Routes to create condition reports
 const express = require("express")
 const Trail = require("../models/trail")
 

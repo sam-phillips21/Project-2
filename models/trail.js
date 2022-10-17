@@ -1,4 +1,5 @@
 // import dependencies
+//have schema to generate new trails!
 const mongoose = require('./connection')
 
 // import user model for populate
