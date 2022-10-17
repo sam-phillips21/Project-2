@@ -1,13 +1,16 @@
 {% layout 'layout.liquid' %}
 {% block content %}
     <div class="col-mb-4">
-        <h1 class="display-4">Welcome To WYO Trails</h1>
-        <p>This app is all about Wyoming Trails</p>
-        <img src="https://cdn2.apstatic.com/photos/mtb/7005273_large_1554822747.jpg" alt="image of biker" height="600px">
+        <h1 class="display-4" style="text-align: center;">Welcome To WYO Trails</h1>
+        <p class= 'display-6' style="text-align: center;">This app is all about Wyoming Trails</p>
 
+        <div class="image" style= "text-align: center;">
+            
+       <img src="https://cdn2.apstatic.com/photos/mtb/7005273_large_1554822747.jpg"  alt="image of biker" height="600px">
+        </div>
     </div>
-    <div class="btn-group btn-group-lg mt-4">
-        <a href="/users/signup" class="btn btn-primary">Sign Up</a>
+    <div class="btn-group btn-group-lg mt-4" style= "text-align: center;">
+        <a href="/users/signup" class="btn btn-primary" >Sign Up</a>
         <a href="/users/login" class="btn btn-secondary">Login</a>
     </div>
 {% endblock %}

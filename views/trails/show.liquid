@@ -29,10 +29,9 @@
                     {% for condition in trail.conditions %}
                         {% render '../condition.liquid', condition: condition, userId: userId, trail: trail %}
                         {% endfor %}
-                        
+                     {%endif%}   
                 </div>
                 
-
      {% if trail.owner == userId and loggedIn %}
         
         <div class="btn-group">
@@ -43,7 +42,7 @@
                 <input class="btn btn-danger" type="submit" value="Delete Trail" >
             </form>
         </div>
-        {% endif %}
+        
             </div>
             {% endif %}
 

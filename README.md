@@ -82,6 +82,4 @@ Monday: debug Finalize and deploy
 Route table: https://docs.google.com/document/d/17EQQjm_SLMgP71vHW4Ivt-LFV1H53VyQ3Ym_w5LRmqg/edit?usp=sharing
 
 
- ![RouteTable](WyoTrails/projectTwoImages/RouteTable.png)
-
-<img src= "WyoTrails/projectTwoImages/RouteTable.png" >
+ ![RouteTable](/RouteTable.png)
