@@ -2,16 +2,16 @@
 {% block content %}
     {% if trails.length > 0%}
         <div>
-            <h2 class="display-6">All Trails</h2>
+            <h2 class="container-md justify-content-center">All Trails</h2>
             <div class="container">
                 {% for trail in trails %}
                     <div class="container" style="width: 50rem;">
-                        <h5 class="card-header">{{trail.state}}</h5>
+                        <h5 class="card-header">{{trail.state}}:  {{trail.location}}</h5>
                         <div class="card-body">
                             <h5 class="card-title">
                                
                             </h5>
-                            <p class="card-text"> {{trail.trail}} trail in {{trail.location}}</p>
+                            <p class="card-text"> {{trail.trail}} trail </p>
                             <div class="colorBox" style="background-color: {{trail.type}}">
 
                             </div>
@@ -24,8 +24,10 @@
             </div>
         </div>
     {% else %}
-        <div>
-            <h2 class="display-6">No trails yet... Go Ride!</h2>
+        <div class="containerNoTrails">
+            <p"display-6">No Trails! Create a new trail to contribute. Share your favorite trails!</p>
+            <img src=" https://static.rootsrated.com/image/upload/s--_LALCmqh--/t_rr_large_natural/w2bpaexoldeitgsbxy0t.jpg"
+            >
         </div>
     {% endif %}
 {% endblock %}

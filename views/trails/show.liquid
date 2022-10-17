@@ -1,7 +1,8 @@
 {% layout 'layout.liquid' %}
 {% block content %}
 <div class="container-md">
-    <article>
+    <article class="container-md justify-content-center ">
+        
         <h2>
             {{ trail.title }} 
             {% if loggedIn %}
@@ -10,23 +11,11 @@
             
             {%endif%}
         </h2>
-        <h4> {{trail.trail}} </h4>
+        <h4 class= "container-md justify-content-center"> {{trail.trail}} </h4>
         <h3>Location: {{ trail.location }}</h3>
         <h4>type: {{ trail.type }}</h4>
         <p>Description: {{ trail.Description }}</p>
         <h4>Difficulty: {{ trail.Difficulty }}</h4>
-        
-        {% if trail.owner == userId and loggedIn %}
-        
-        <div class="btn-group">
-
-            <a class="btn btn-primary" href="/trails/edit/{{ trail.id }}">Edit</a>
-
-            <form action="/trails/{{ trail.id }}?_method=DELETE" method="POST">
-                <input class="btn btn-danger" type="submit" value="Delete" >
-            </form>
-        </div>
-        {% endif %}
     </article>
 
     <hr>
@@ -51,12 +40,24 @@
         </div>
         <hr>
         {% if trail.conditions.length > 0 %}
-            <div class="container-md justify-content-left">
+            <div class="container-md justify-content-center">
                 <div class="col-md-8 col-lq-6">
                     {% for condition in trail.conditions %}
                         {% render '../condition.liquid', condition: condition, userId: userId, trail: trail %}
                         {% endfor %}
                 </div>
+
+                  {% if trail.owner == userId and loggedIn %}
+        
+        <div class="btn-group">
+
+            <a class="btn btn-warning" href="/trails/edit/{{ trail.id }}">Edit Trail</a>
+
+            <form action="/trails/{{ trail.id }}?_method=DELETE" method="POST">
+                <input class="btn btn-danger" type="submit" value="Delete Trail" >
+            </form>
+        </div>
+        {% endif %}
             </div>
             {% endif %}
 </div>

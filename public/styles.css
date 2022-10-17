@@ -3,7 +3,14 @@ body{
 }
 
 .card {
+    background-color: rgb(220, 226, 207);
     margin: 5px;
-    width: 18rem;
-    
+    width: 40rem;
+    font-family:'Times New Roman', Times, serif,
+}
+
+img {
+
+    width: 400px,;
+    height: 400px;
 }

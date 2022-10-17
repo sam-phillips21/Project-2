@@ -1,15 +1,15 @@
 {% block content %}
     <div class="card mb-4 shadow">
         <div class="card-body">
-            <p>{{ condition.trailUpdate }}</p>
-            <p>{{ condition.description }}</p>
+            <p>Conditions: {{ condition.trailUpdate }}</p>
+            <p>Description: {{ condition.description }}</p>
             <div class="d-flex justify-content-between">
                 <small>author: {{ condition.author.username }}</small>
           
-                <p>{{ "now" | date: " %b %d, %Y" }}</p>
+                <p>Added: {{ "now" | date: " %b %d, %Y" }}</p>
                 {% if condition.author == userId %}
                     <form action="/conditionControllers/delete/{{trail.id}}/{{condition.id}}?_method=DELETE" method="POST">
-                        <input class="btn btn-danger" type="submit" value="X">
+                        <input class="btn btn-danger" type="submit" value="Delete">
                     </form>
                 {% endif %}
             </div>
