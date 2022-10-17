@@ -5,11 +5,11 @@
         
         <h2>
             {{ trail.title }} 
-            {% if loggedIn %}
+            {%- comment -%} {% if loggedIn %}
             
             
             
-            {%endif%}
+            {%endif%} {%- endcomment -%}
         </h2>
         <h4 class= "container-md justify-content-center"> {{trail.trail}} </h4>
         <h3>Location: {{ trail.location }}</h3>
@@ -29,7 +29,9 @@
                     {% for condition in trail.conditions %}
                         {% render '../condition.liquid', condition: condition, userId: userId, trail: trail %}
                         {% endfor %}
+                        
                 </div>
+                
 
      {% if trail.owner == userId and loggedIn %}
         
