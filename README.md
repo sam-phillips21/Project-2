@@ -1,6 +1,9 @@
-Trail conditions App
+Trail conditions App and user experience
 
-The trail conditions app is designed to be an online community and resource for all users. Users will be able to sign up/create an account to share information about their local trails and the conditions found on the trail. The app will initially start with ten trails in Wyoming and display the template users will be able to follow, to share and upload their own trails/conditions report. App will launch specializing towards mountain bikers as trail conditions are very important to a successful ride. Users will be able to update the trail conditions with comments and timestamps based on a recent experience. The trails report will then be featured on the trail they wrote the report for. The app will have a homepage where users can view trails featured in the app, as well as sign in or sign up.  A user will be attracted to this application because of the information present on the site. The application allows users to seek out information on mountain bike rides they plan on doing. The user also can add data to the application to help other users have a pleasant experience on the trails. Overall this creates a platform for users to have a better time in the great outdoors.
+The trail conditions app is designed to be an online community and resource for all users. Users will be able to sign up/create an account to share information about their local trails and the conditions found on the trail. The app will initially start with ten trails in Wyoming and display the template users will be able to follow, to share and upload their own trails/conditions report. App will launch specializing towards mountain bikers as trail conditions are very important to a successful ride. Users will be able to update the trail conditions with comments and timestamps based on a recent experience. The trails report will then be featured on the trail they wrote the report for. The app will have a homepage where users can view trails featured in the app, as well as sign in or sign up. 
+
+
+ A user will be attracted to this application because of the information present on the site. The application allows users to seek out information on mountain bike rides they plan on doing. The user also can add data to the application to help other users have a pleasant experience on the trails. Overall this creates a platform for users to have a better time in the great outdoors.
 
 The app will follow some basic guidelines for users to post. The app will allow users to generate a trail report including but not limited to: 
 
@@ -75,4 +78,11 @@ Sunday:Debug
 Monday: debug Finalize and deploy
 
 
-![Route Table](https://docs.google.com/document/d/17EQQjm_SLMgP71vHW4Ivt-LFV1H53VyQ3Ym_w5LRmqg/edit?usp=sharing)
+Route table: https://docs.google.com/document/d/17EQQjm_SLMgP71vHW4Ivt-LFV1H53VyQ3Ym_w5LRmqg/edit?usp=sharing
+
+
+ ![](/Users/samphillips/sei/projects/WyoTrails/projectTwoImages/Screen Shot 2022-10-17 at 12.04.13 PM.png)
+
+ 
+WyoTrails/README.md
+WyoTrails/projectTwoImages/Screen Shot 2022-10-17 at 12.04.13 PM.png
