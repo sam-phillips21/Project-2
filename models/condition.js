@@ -25,3 +25,4 @@ const conditionSchema = new Schema({
 })
 
 module.exports = conditionSchema
+

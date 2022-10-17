@@ -84,4 +84,4 @@ Route table: https://docs.google.com/document/d/17EQQjm_SLMgP71vHW4Ivt-LFV1H53Vy
 
  ![RouteTable](WyoTrails/projectTwoImages/RouteTable.png)
 
-<img src= "/WyoTrails/projectTwoImages/RouteTable.png" alt= "Alt text" title= "Route Table">
+<img src= "../WyoTrails/projectTwoImages/RouteTable.png" alt= "Alt text" title= "Route Table">
