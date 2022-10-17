@@ -81,8 +81,4 @@ Monday: debug Finalize and deploy
 Route table: https://docs.google.com/document/d/17EQQjm_SLMgP71vHW4Ivt-LFV1H53VyQ3Ym_w5LRmqg/edit?usp=sharing
 
 
- ![](/Users/samphillips/sei/projects/WyoTrails/projectTwoImages/Screen Shot 2022-10-17 at 12.04.13 PM.png)
-
- 
-WyoTrails/README.md
-WyoTrails/projectTwoImages/Screen Shot 2022-10-17 at 12.04.13 PM.png
+ ![Route-table](/Users/samphillips/sei/projects/WyoTrails/projectTwoImages/Screen Shot 2022-10-17 at 12.04.13 PM.png)
