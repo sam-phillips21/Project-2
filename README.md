@@ -20,6 +20,7 @@ Trail rating( stretch goal) 1-5 stars
 
 Photos: (stretch goal) all users to upload photos from their ride.
 
+Seed Data: The seed data is information about the first ten trails hosted on the website. 
 
 Technologies used:
 
@@ -82,3 +83,5 @@ Route table: https://docs.google.com/document/d/17EQQjm_SLMgP71vHW4Ivt-LFV1H53Vy
 
 
  ![RouteTable](WyoTrails/projectTwoImages/RouteTable.png)
+
+<img src = "/WyoTrails/projectTwoImages/RouteTable.png">
