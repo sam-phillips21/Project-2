@@ -7,7 +7,7 @@
             {{ trail.title }} 
             {% if loggedIn %}
             
-            {% else %}
+            
             
             {%endif%}
         </h2>
@@ -19,8 +19,34 @@
     </article>
 
     <hr>
-    <H3>Trail Report</H3>
-    <hr>
+  
+<H3>Trail Reports</H3>
+        
+        <hr>
+        {% if trail.conditions.length > 0 %}
+            <div class="container-md justify-content-center">
+                <div class="col-md-8 col-lq-6">
+                    {% for condition in trail.conditions %}
+                        {% render '../condition.liquid', condition: condition, userId: userId, trail: trail %}
+                        {% endfor %}
+                </div>
+
+     {% if trail.owner == userId and loggedIn %}
+        
+        <div class="btn-group">
+
+            <a class="btn btn-warning" href="/trails/edit/{{ trail.id }}">Edit Trail</a>
+
+            <form action="/trails/{{ trail.id }}?_method=DELETE" method="POST">
+                <input class="btn btn-danger" type="submit" value="Delete Trail" >
+            </form>
+        </div>
+        {% endif %}
+            </div>
+            {% endif %}
+
+              
+    
         <div class = "col-md-6">
             
             <form action="/conditionControllers/{{trail.id}}" method="POST">
@@ -38,27 +64,5 @@
                 </form>
                 
         </div>
-        <hr>
-        {% if trail.conditions.length > 0 %}
-            <div class="container-md justify-content-center">
-                <div class="col-md-8 col-lq-6">
-                    {% for condition in trail.conditions %}
-                        {% render '../condition.liquid', condition: condition, userId: userId, trail: trail %}
-                        {% endfor %}
-                </div>
-
-                  {% if trail.owner == userId and loggedIn %}
-        
-        <div class="btn-group">
-
-            <a class="btn btn-warning" href="/trails/edit/{{ trail.id }}">Edit Trail</a>
-
-            <form action="/trails/{{ trail.id }}?_method=DELETE" method="POST">
-                <input class="btn btn-danger" type="submit" value="Delete Trail" >
-            </form>
-        </div>
-        {% endif %}
-            </div>
-            {% endif %}
 </div>
 {% endblock %}
