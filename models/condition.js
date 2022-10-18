@@ -4,11 +4,11 @@ const mongoose = require('./connection')
 
 const {Schema} = mongoose
 
-const conditionSchema = new Schema({
+const conditionSchema = new Schema({ //make sure your schema names are capitalized
     trailUpdate:{
         
             type: String,
-             required: false 
+             required: false //be more aware of your indentation and white space
             },
 		description: { type: String, required: true },
      

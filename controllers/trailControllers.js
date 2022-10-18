@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
 			res.redirect(`/error?error=${error}`)
 		})
 })
-
+// There's a lot of unused code and you may want to get rid of it for organization sake
 // edit route -> GET that takes us to the edit form view
 // router.get('/:id/edit', (req, res) => {
 // 	// we need to get the id

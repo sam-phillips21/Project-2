@@ -4,7 +4,7 @@ const express = require("express")
 const Trail = require("../models/trail")
 
 const router = express.Router()
-
+//Comments are needed to make it easier for your future self and other developers to read your code.
 router.post('/:trailId', (req, res) => {
     console.log("route hit")
     const trailId = req.params.trailId
@@ -30,6 +30,7 @@ router.post('/:trailId', (req, res) => {
 })
 
 router.delete('/delete/:trailId/:condId', (req, res) => {
+    //Try to be more descriptive in your console logs so that you can keep track in your terminal
     console.log("hit")
     const trailId = req.params.trailId
     const condId = req.params.condId

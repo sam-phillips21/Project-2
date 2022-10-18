@@ -1,6 +1,6 @@
 require("dotenv").config() // Load ENV Variables
 const express = require("express") 
-
+//Make sure you're commenting out or deleting any unused code
 const path = require("path") // import path module
 const TrailRouter = require('./controllers/trailControllers')
 const UserRouter = require('./controllers/userControllers')
